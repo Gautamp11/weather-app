@@ -1,0 +1,262 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+body {
+  font-family: "Quicksand", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: white;
+  background: url(cloud-blue-sky.jpg);
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.weather-container {
+  position: relative;
+  width: 1000px;
+  height: 650px;
+  max-height: 100vh;
+  max-width: 100vw;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  transition: 0.3s all ease;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("cloud-blue-sky.jpg");
+  background-size: cover;
+  filter: blur(5px);
+  transition: filter 0.3s ease;
+  z-index: -1;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: row; /* Change direction to row */
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+
+.left-section,
+.right-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.left-section {
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.right-section {
+  overflow-y: auto;
+}
+
+.city-input {
+  width: 80%;
+  border: none;
+  font-family: inherit;
+  padding: 10px;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 600;
+  transition: 0.3s all ease;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.city-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.city-input:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.text-area {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+}
+
+.weather-detail {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+}
+.text-area h4 span {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.text-area h4 {
+  font-size: 1.2rem;
+  font-weight: normal;
+  transition: color 0.3s ease;
+}
+
+.future-weather-list {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.weather-day {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+  text-align: left;
+}
+
+.weather-day:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.weather-day h4 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.weather-day p {
+  margin: 5px 0;
+  font-size: 1rem;
+}
+
+.btn {
+  background: linear-gradient(to right, #1e3c72, #2a5298);
+  width: 80%;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px;
+  color: white;
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: 600;
+  outline: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.btn:active {
+  opacity: 0.8;
+  transform: scale(0.98);
+}
+
+/* For Webkit browsers (Chrome, Safari, etc.) */
+::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1); /* Color of the scrollbar track */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3); /* Color of the scrollbar handle */
+  border-radius: 5px; /* Radius of the scrollbar handle */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(
+    255,
+    255,
+    255,
+    0.5
+  ); /* Color of the scrollbar handle on hover */
+}
+
+@media (max-width: 640px) {
+  .container {
+    width: 100%;
+  }
+
+  .content {
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding-top: 20px;
+  }
+  .weather-container {
+    height: 100%;
+    width: 100%;
+  }
+
+  .left-section {
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .text-area {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .right-section {
+    width: 100%;
+    padding: 0;
+  }
+  .weather-day {
+    text-align: center;
+  }
+}
