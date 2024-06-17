@@ -204,6 +204,7 @@ body {
   display: flex;
   justify-content: center;
   text-align: center;
+  padding: 5px;
 }
 .text-area h4 span {
   font-size: 1.4rem;
