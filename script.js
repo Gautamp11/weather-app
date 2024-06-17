@@ -90,7 +90,6 @@ const getWeatherByCity = function (city) {
     })
     .then((data) => {
       displayWeather(data);
-      console.log(data);
     });
 };
 

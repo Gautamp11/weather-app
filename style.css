@@ -159,6 +159,7 @@ body {
 }
 
 .left-section {
+  margin-top: 20px;
   padding: 20px;
   display: flex;
   justify-content: center;
@@ -204,7 +205,7 @@ body {
   display: flex;
   justify-content: center;
   text-align: center;
-  padding: 5px;
+  padding: 3px;
 }
 .text-area h4 span {
   font-size: 1.4rem;
