@@ -3,6 +3,7 @@ const btnEl = document.querySelector(".btn");
 const weatherAPIKey = "ZHCCS3FCW7P9MPMHHGGPL4V8J"; // Your Visual Crossing Weather API key
 const cityInput = document.querySelector(".city-input");
 const futureWeatherList = document.querySelector(".future-weather-list");
+const spinner = document.querySelector(".loader");
 
 const getPosition = function () {
   return new Promise(function (resolve, reject) {
@@ -16,6 +17,7 @@ const getCityFromCoords = function (lat, lng) {
 };
 
 const displayWeather = function (data) {
+  spinner.style.display = "none";
   const weatherDetails = document.querySelector(".text-area");
   const daysHtml = data.days
     .map((day) => {
@@ -53,7 +55,12 @@ const displayWeather = function (data) {
   cityInput.value = cityInput.value ? "" : data.resolvedAddress.split(", ")[0];
 };
 
+const loadSpinner = function () {
+  spinner.style.display = "block";
+};
+
 const getWeatherByCoords = function () {
+  loadSpinner();
   getPosition()
     .then((pos) => {
       const { latitude: lat, longitude: lng } = pos.coords;
@@ -74,6 +81,7 @@ const getWeatherByCoords = function () {
 };
 
 const getWeatherByCity = function (city) {
+  loadSpinner();
   const weatherUrlByCity = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?unitGroup=metric&key=${weatherAPIKey}`;
   fetch(weatherUrlByCity)
     .then((res) => {

@@ -22,6 +22,26 @@ body {
   overflow: hidden;
 }
 
+.loader {
+  margin-top: 20px;
+  border: 8px solid transparent;
+  border-left-color: #3498db; /* Left border line color */
+  border-right-color: #3498db; /* Right border line color */
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  animation: spin 1s linear infinite;
+  display: none;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .weather-container {
   position: relative;
   width: 1000px;
@@ -79,12 +99,13 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  /* padding-top: 20px; */
 }
 
 .left-section {
   padding: 20px;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .right-section {
@@ -112,6 +133,7 @@ body {
 .city-input:focus {
   outline: none;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  transform: translateY(-1rem);
 }
 
 .text-area {
@@ -126,7 +148,6 @@ body {
   display: flex;
   justify-content: center;
   text-align: center;
-  padding: 10px;
 }
 .text-area h4 span {
   font-size: 1.4rem;
@@ -182,7 +203,7 @@ body {
   font-size: 1.1rem;
   font-weight: 600;
   outline: none;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: all 0.5s ease;
 }
 
 .btn:hover {
