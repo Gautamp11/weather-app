@@ -46,7 +46,7 @@ const displayWeather = function (data) {
     <h4>Description <br /><span>${data.currentConditions.conditions}</span></h4>
   </div>  
   <div class="weather-detail" id="city">
-      <h4>In <span>${data.resolvedAddress}</span></h4>
+      <h4>In <br><span>${data.resolvedAddress}</span></h4>
   </div> 
         `;
 

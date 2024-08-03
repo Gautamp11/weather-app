@@ -1,12 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
 
+:root {
+  --primary-color: rgb(54, 69, 79);
+  --primary-color-light: rgba(54, 69, 79, 0.7);
+  --secondary-color: rgb(229, 228, 226);
+}
+
 body {
   font-family: "Quicksand", sans-serif;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  color: white;
-  background: url(cloud-blue-sky.jpg);
+  color: var(--primary-color);
   background-position: center;
   display: flex;
   justify-content: center;
@@ -21,27 +26,6 @@ body {
   width: 100vw;
   overflow: hidden;
 }
-
-/* .loader {
-  margin-top: 20px;
-  border: 8px solid transparent;
-  border-left-color: #3498db;
-  border-right-color: #3498db; 
-  border-radius: 50%;
-  width: 2rem;
-  height: 2rem;
-  animation: spin 1s linear infinite;
-  display: none;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-} */
 
 .loader {
   width: 24px;
@@ -60,7 +44,7 @@ body {
   bottom: 0;
   position: absolute;
   border-radius: 50% 50% 0;
-  border: 8px solid #fff;
+  border: 8px solid #1b1b1b;
   transform: rotate(45deg) translate(0, 0);
   box-sizing: border-box;
   animation: animMarker 0.4s ease-in-out infinite alternate;
@@ -112,30 +96,7 @@ body {
   overflow: hidden;
   transition: 0.3s all ease;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-  background: rgba(0, 0, 0, 0.1);
   padding: 10px;
-}
-
-.background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("cloud-blue-sky.jpg");
-  background-size: cover;
-  filter: blur(5px);
-  transition: filter 0.3s ease;
-  z-index: -1;
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.2);
 }
 
 .content {
@@ -155,7 +116,6 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* padding-top: 20px; */
 }
 
 .left-section {
@@ -179,17 +139,17 @@ body {
   text-align: center;
   font-weight: 600;
   transition: 0.3s all ease;
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
+  background: var(--secondary-color);
+  color: var(--primary-color);
 }
 
 .city-input::placeholder {
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--primary-color-light);
 }
 
 .city-input:focus {
   outline: none;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 10px rgba(29, 27, 27, 0.5);
   transform: translateY(-1rem);
 }
 
@@ -227,7 +187,7 @@ body {
 }
 
 .weather-day {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--secondary-color);
   padding: 10px;
   margin: 10px 0;
   border-radius: 10px;
@@ -236,7 +196,7 @@ body {
 }
 
 .weather-day:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(10, 10, 10, 0.2);
 }
 
 .weather-day h4 {
@@ -264,10 +224,6 @@ body {
   transition: all 0.5s ease;
 }
 
-.btn:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
 .btn:active {
   opacity: 0.8;
   transform: scale(0.98);
@@ -280,12 +236,12 @@ body {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.1); /* Color of the scrollbar track */
+  background: var(--secondary-color); /* Color of the scrollbar track */
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.3); /* Color of the scrollbar handle */
+  background: rgba(102, 98, 98, 0.3); /* Color of the scrollbar handle */
   border-radius: 5px; /* Radius of the scrollbar handle */
 }
 
@@ -339,3 +295,5 @@ body {
     text-align: center;
   }
 }
+
+
